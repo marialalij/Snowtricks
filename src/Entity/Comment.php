@@ -29,13 +29,13 @@ class Comment
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $author;
 
     /**
-     * @ORM\ManyToOne(targetEntity=trick::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity=Trick::class)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $trick;
 
@@ -80,12 +80,12 @@ class Comment
         return $this;
     }
 
-    public function getTrick(): ?trick
+    public function getTrick(): ?Trick
     {
         return $this->trick;
     }
 
-    public function setTrick(?trick $trick): self
+    public function setTrick(?Trick $trick): self
     {
         $this->trick = $trick;
 
