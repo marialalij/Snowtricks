@@ -1,8 +1,44 @@
- {% extends "base.html.twig" %}
+{% extends "base.html.twig" %}
 
- {% block body %}
-   <div class="jumbotron text-center">
-      <h1></h1>
-       <p></p>
-    </div>
-  {% endblock %}
+
+{% block meta %}
+	<meta name="description" content="Trick list of Snowtricks, snowboarder community to learn snowboard tricks.">
+{% endblock %}
+
+{% block title %}Site communautaire SnowTricks
+{% endblock %}
+
+
+{% block body %}
+	<div class="row" id="home">
+		<div class="container-fluid homeHeader d-flex px-0 mx-0">
+			<div class="homeTitle py-4 px-4">
+				<h1>SnowTricks
+				</h1>
+				<h2>
+					10 Snowboard Tricks to Learn First
+				</h2>
+
+			</div>
+		</div>
+
+	</div>
+	<div class="container-fluid">
+		<div class="row justify-content-center pb-0" id="trickList">
+			{% for trick in tricks %}
+				<div class="col-md-2 col-sm-4 mx-1 mb-4 trick-card-div">
+					<div class="card">
+						<img class="card" class="card-img-top" src={{ trick.maineImage }} alt="{{ trick.name }}">
+						<h5 class="card-title">{{ trick.name }}</h5>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="row justify-content-center ">
+		<div class=" text-center " id="loadMoreCol">
+			<button type="button" class="btn btn-light loadMoreBtn" id="loadMoreTricksBtn">
+				<i class="fas fa-spinner mr-3"></i>Load more</button>
+		</div>
+	</div>
+{% endblock %}

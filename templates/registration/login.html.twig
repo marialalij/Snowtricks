@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<div class="container login-div">
+		<h1 class="h3 mb-4 font-weight-normal text-center my-md-5">Se Connecter</h1>
+		<div class="col-md-6 mx-auto mb-5 login-form text-center">
+			<form action="/login" method="post">
+				<label for="inputUsername">Username</label>
+				<input type="text" value="" name="_username" id="inputUsername" class="form-control" required="" autofocus="">
+				<label for="inputPassword">Password</label>
+				<input type="password" name="_password" id="inputPassword" class="form-control" required="">
+
+				<input type="hidden" name="_csrf_token" value="9FxOvwiK3WRZE_7vOXvNG-sh5ao-wLNwIpgS1S3a1X0">
+
+				<div class="my-3">
+					<button class="btn btn-info" type="submit">
+						Login
+					</button>
+				</div>
+
+				<a class="custom-link" href="/reset" id="forgotpassword">Forgot password</a>
+			</form>
+
+		</div>
+
+	</div>
+{% endblock %}

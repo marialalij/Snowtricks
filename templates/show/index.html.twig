@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div class="row py-3 d-flex flex-column align-items-center pb-0 text-justify" id="trickInfos">
+		<img src="{{ trick.maineImage }}" alt=" {{ trick.name }} ">
+
+		<p>{{ trick.description }}</p>
+		<div class="row py-3 justify-content-center" id="trickBadges">
+			{{ trick.author.firstName }}
+			{{ trick.author.lastName }}
+		</div>
+
+		<div class="badge badge-light ml-4 mr-2" id="trickDates">
+			Created at:
+			{{ trick.createdat }}
+			<br>
+		</div>
+
+
+	</div>
+
+
+{% endblock %}
